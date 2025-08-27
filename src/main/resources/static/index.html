@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Carros</title>
+</head>
+<body>
+    <h1>Carros</h1>
+    <ul id="car-list"></ul>
+
+    <script>
+        fetch("/car")
+            .then(response => response.json())
+            .then(cars => {
+                const list = document.getElementById('car-list');
+                cars.forEach(car => {
+                    const item = document.createElement('li');
+                    item.textContent = `${car.name} - ${car.color}`;
+                    list.appendChild(item);
+                });
+            })
+            .catch(error => {
+                console.error('Erro ao buscar carros:', error);
+            });
+    </script>
+</body>
+</html>
