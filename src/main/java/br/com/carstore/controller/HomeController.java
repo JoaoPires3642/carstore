@@ -1,8 +1,6 @@
 package br.com.carstore.controller;
-import br.com.carstore.model.Car;
 import br.com.carstore.model.CarDTO;
 import br.com.carstore.service.CarService;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
